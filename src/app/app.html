@@ -1,0 +1,283 @@
+<div class="page-shell">
+  <header class="site-header">
+    <a class="brand" href="#overview" aria-label="Service Billing home">
+      <span class="brand-mark">SB</span>
+      <span class="brand-copy">
+        <strong>{{ brand }}</strong>
+        <small>{{ companyName }}</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      @for (link of navLinks; track link.label) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
+    </nav>
+
+    <a class="header-cta" [href]="demoUrl" target="_blank" rel="noopener">
+      Open Demo
+    </a>
+  </header>
+
+  <main>
+    <section class="hero section-card" id="overview">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Repair workflow platform</p>
+        <h1>Market your web app like a complete service business system.</h1>
+        <p class="hero-text">
+          Present job ticket intake, technician coordination, customer tracking, billing,
+          inventory, and WhatsApp updates as one polished workflow. This Angular landing page
+          is built to help you sell the product clearly.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" [href]="demoUrl" target="_blank" rel="noopener">
+            Open Hosted Demo
+          </a>
+          <a class="button button-secondary" href="#contact">Talk to Sales</a>
+        </div>
+
+        <ul class="hero-list">
+          <li>No WhatsApp API dependency if you continue with your Electron QR workflow.</li>
+          <li>Product-focused copy that explains value to non-technical clients quickly.</li>
+          <li>Structured for demo links, portfolio sharing, and direct outreach.</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal delay-1" aria-hidden="true">
+        <div class="dashboard-preview">
+          <div class="window-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="dashboard-body">
+            <aside class="mini-sidebar">
+              <div class="mini-logo"></div>
+              <div class="mini-nav"></div>
+              <div class="mini-nav short"></div>
+              <div class="mini-nav"></div>
+            </aside>
+
+            <div class="mini-content">
+              <div class="mini-topline"></div>
+              <div class="mini-stat-grid">
+                <div class="mini-stat warm"></div>
+                <div class="mini-stat cool"></div>
+                <div class="mini-stat neutral"></div>
+              </div>
+              <div class="mini-panel-grid">
+                <div class="mini-panel chart"></div>
+                <div class="mini-panel list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-note note-api">
+          <span class="note-label">Launch advantage</span>
+          <strong>0 WhatsApp API fees</strong>
+          <p>Electron + QR login keeps rollout simple.</p>
+        </div>
+
+        <div class="floating-note note-demo">
+          <span class="note-label">Demo ready</span>
+          <strong>Hosted product page</strong>
+          <p>Send clients from landing site straight to the demo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="metric-strip">
+      @for (metric of metrics; track metric.label) {
+        <article class="metric-card reveal">
+          <strong>{{ metric.value }}</strong>
+          <span>{{ metric.label }}</span>
+        </article>
+      }
+    </section>
+
+    <section class="section-card section-block" id="features">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Core features</p>
+          <h2>Everything you need to explain on one page</h2>
+        </div>
+        <p>
+          Instead of describing the app as only a billing tool, the website shows how it supports
+          the full day-to-day service operation.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        @for (feature of features; track feature.title) {
+          <article class="feature-card reveal">
+            <span class="feature-index">0{{ $index + 1 }}</span>
+            <p class="feature-eyebrow">{{ feature.eyebrow }}</p>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="story-grid">
+      <div class="section-card story-panel">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Sales angle</p>
+            <h2>Why this marketing site will help</h2>
+          </div>
+        </div>
+
+        <div class="selling-grid">
+          @for (point of sellingPoints; track point.title) {
+            <article class="selling-card reveal">
+              <h3>{{ point.title }}</h3>
+              <p>{{ point.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+
+      <aside class="section-card bridge-panel reveal delay-2">
+        <p class="eyebrow">WhatsApp bridge</p>
+        <h2>No API required</h2>
+        <p>
+          Since you already provide the product through Electron with WhatsApp QR login,
+          the website can market that as a practical low-friction setup rather than a missing feature.
+        </p>
+
+        <ul class="bridge-list">
+          <li>No Business API onboarding to explain during sales.</li>
+          <li>No recurring API cost pressure for smaller clients.</li>
+          <li>Faster to demo because the communication flow is already familiar.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section-card section-block" id="screens">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Screen showcase</p>
+          <h2>Real screenshots from the hosted demo</h2>
+        </div>
+        <p>
+          These cards now use actual captured screens from your live demo, so the page feels more trustworthy during
+          client sharing and sales calls.
+        </p>
+      </div>
+
+      <div class="screen-grid">
+        @for (shot of screenshots; track shot.title) {
+          <article class="screen-card reveal">
+            <div class="screen-frame">
+              <div class="window-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <img class="screen-image" [src]="shot.image" [alt]="shot.title">
+            </div>
+            <div class="screen-copy">
+              <p class="feature-eyebrow">{{ shot.eyebrow }}</p>
+              <h3>{{ shot.title }}</h3>
+              <p>{{ shot.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="section-card section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Demo flow</p>
+          <h2>A simple story to tell during client calls</h2>
+        </div>
+        <p>
+          This sequence keeps your pitch focused, especially when you share the landing page before or after a demo.
+        </p>
+      </div>
+
+      <div class="workflow-grid">
+        @for (step of workflow; track step.title) {
+          <article class="workflow-card reveal">
+            <span class="workflow-step">0{{ $index + 1 }}</span>
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="section-card section-block">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">Best fit</p>
+          <h2>Who this is easiest to sell to</h2>
+        </div>
+      </div>
+
+      <div class="segment-list">
+        @for (segment of fitSegments; track segment) {
+          <span class="segment-pill">{{ segment }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="section-card section-block faq-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions clients may ask</h2>
+        </div>
+        <p>
+          These answers help position the product better when prospects ask about setup, screenshots, and WhatsApp.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        @for (faq of faqs; track faq.question) {
+          <details class="faq-item reveal">
+            <summary>{{ faq.question }}</summary>
+            <p>{{ faq.answer }}</p>
+          </details>
+        }
+      </div>
+    </section>
+
+    <section class="contact-panel" id="contact">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact and CTA</p>
+        <h2>Give the client one clear next step</h2>
+        <p>
+          Open the demo, schedule a walkthrough, or message directly. This last section is designed to make the
+          buying conversation feel simple.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        @for (card of contacts; track card.label) {
+          <article class="contact-card reveal">
+            <span class="contact-label">{{ card.label }}</span>
+            @if (card.href) {
+              <a [href]="card.href" [target]="card.href.startsWith('http') ? '_blank' : null" rel="noopener">
+                {{ card.value }}
+              </a>
+            } @else {
+              <strong>{{ card.value }}</strong>
+            }
+            <p>{{ card.hint }}</p>
+          </article>
+        }
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>{{ brand }} marketing site for demo sharing, outreach, and product presentation.</p>
+    <a [href]="demoUrl" target="_blank" rel="noopener">Launch Demo</a>
+  </footer>
+</div>
